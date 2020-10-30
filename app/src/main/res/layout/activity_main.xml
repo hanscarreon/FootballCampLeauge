@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_colors"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/All_teams"
+                android:tag="All_teams"
+                android:onClick="nextIntent"
+                android:layout_width="150dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_height="150dp"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Teams"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/leagues"
+                android:layout_width="150dp"
+                android:tag="allLeagues"
+                android:onClick="nextIntent"
+                android:src="@mipmap/ic_launcher"
+                android:layout_height="150dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Leagues" />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <!--   /.linear -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="150dp"
+                android:tag="AllGames"
+                android:onClick="nextIntent"
+                android:src="@mipmap/ic_launcher"
+                android:layout_height="150dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Games"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="150dp"
+                android:src="@mipmap/ic_launcher"
+                android:tag="NextGames"
+                android:onClick="nextIntent"
+                android:layout_height="150dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="Incoming Games"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <!--   /.linear -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="150dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_height="150dp"/>
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:gravity="center"
+                android:text="About Soccer"
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+    <!--   /.linear -->
+
+
+
+</LinearLayout>
