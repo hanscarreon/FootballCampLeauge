@@ -33,7 +33,7 @@ public class TeamsAdapter extends RecyclerView.Adapter<TeamsAdapter.TeamsViewHol
         Picasso.get().load(team.getStrTeamBadge()).into(holder.teamPic);
         holder.teamName.setText(team.getStrTeam() == null ? "N/A" : team.getStrTeam());
         holder.teamAlt.setText(team.getStrAlternate() == null ? "N/A" : team.getStrAlternate() );
-        holder.teamDesc.setText(team.getStrDescriptionEN() == null ? "N/A" : team.getStrDescriptionEN()  );
+//        holder.teamDesc.setText(team.getStrDescriptionEN() == null ? "N/A" : team.getStrDescriptionEN()  );
     }
 
     @Override
@@ -51,7 +51,7 @@ public class TeamsAdapter extends RecyclerView.Adapter<TeamsAdapter.TeamsViewHol
             teamPic = itemView.findViewById(R.id.cardImg);
             teamName = itemView.findViewById(R.id.teamName);
             teamAlt = itemView.findViewById(R.id.teamAlt);
-            teamDesc = itemView.findViewById(R.id.teamDesc);
+//            teamDesc = itemView.findViewById(R.id.teamDesc);
         }
     }
 

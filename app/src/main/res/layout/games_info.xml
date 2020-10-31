@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -9,6 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         app:cardCornerRadius="20dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -19,17 +21,25 @@
             android:orientation="vertical">
 
             <TextView
+                android:layout_marginTop="10dp"
                 android:id="@+id/strEvent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="NorthEast United vs Chennaiyin" />
+                android:fontFamily="@font/advent"
+                android:textSize="25sp"
+                android:text="NorthEast United vs Chennaiyin"
+                />
 
             <TextView
                 android:id="@+id/strLeague"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:fontFamily="@font/advent"
+                android:textSize="18sp"
                 android:text="Indian Super League" />
 
             <LinearLayout
@@ -43,6 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
+
                     android:text="Home team" />
 
                 <TextView
@@ -51,7 +62,8 @@
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:gravity="center"
-
+                    android:textSize="25sp"
+                    android:fontFamily="@font/digital"
                     android:text="VS" />
 
                 <TextView
@@ -75,16 +87,17 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:textSize="35sp"
+                    android:fontFamily="@font/digital"
                     android:text="5" />
 
                 <TextView
-                    android:id="@+id/strVenue"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="15dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Jawaharlal Nehru Stadium" />
+                    android:text="" />
 
                 <TextView
                     android:id="@+id/intAwayScore"
@@ -92,9 +105,27 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center"
+                    android:textSize="35sp"
+                    android:fontFamily="@font/digital"
                     android:text="0" />
 
             </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:fontFamily="@font/advent"
+                android:text="Venue" />
+            <TextView
+                android:id="@+id/strVenue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:fontFamily="@font/advent"
+                android:text="Jawaharlal Nehru Stadium" />
+
 
             <TextView
                 android:id="@+id/strTimestamp"
@@ -107,4 +138,4 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

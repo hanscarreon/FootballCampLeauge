@@ -25,7 +25,7 @@
                 android:tag="All_teams"
                 android:onClick="nextIntent"
                 android:layout_width="150dp"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/balls"
                 android:layout_height="150dp"
 
                 />
@@ -34,6 +34,10 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="Teams"
+                android:background="@drawable/background_colors"
+                android:textSize="30sp"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/digital"
                 />
         </RelativeLayout>
 
@@ -46,12 +50,16 @@
                 android:layout_width="150dp"
                 android:tag="allLeagues"
                 android:onClick="nextIntent"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/balls"
                 android:layout_height="150dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
+                android:background="@drawable/background_colors"
+                android:textSize="30sp"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/digital"
                 android:text="Leagues" />
         </RelativeLayout>
 
@@ -73,15 +81,20 @@
                 android:layout_width="150dp"
                 android:tag="AllGames"
                 android:onClick="nextIntent"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/balls"
                 android:layout_height="150dp"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="Games"
+                android:background="@drawable/background_colors"
+                android:textSize="30sp"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/digital"
                 />
         </RelativeLayout>
+
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -89,7 +102,7 @@
             android:layout_height="wrap_content">
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="150dp"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/balls"
                 android:tag="NextGames"
                 android:onClick="nextIntent"
                 android:layout_height="150dp"/>
@@ -99,6 +112,11 @@
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="Incoming Games"
+                android:background="@drawable/background_colors"
+                android:textSize="20sp"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/digital"
+
                 />
         </RelativeLayout>
 
@@ -115,13 +133,20 @@
             android:layout_height="wrap_content">
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="150dp"
-                android:src="@mipmap/ic_launcher"
+                android:src="@drawable/balls"
                 android:layout_height="150dp"/>
             <TextView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:gravity="center"
+                android:tag="Soccer_About"
+                android:onClick="nextIntent"
                 android:text="About Soccer"
+                android:background="@drawable/background_colors"
+                android:textSize="20sp"
+                android:textColor="@color/colorWhite"
+                android:fontFamily="@font/digital"
                 />
         </RelativeLayout>
 

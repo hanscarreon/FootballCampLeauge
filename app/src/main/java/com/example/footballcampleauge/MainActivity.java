@@ -8,15 +8,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.footballcampleauge.Activity.All_teams;
 
 public class MainActivity extends AppCompatActivity {
     ImageView teamsBtn;
     ImageView leaguesBtn;
+    DataController dataController;
 //    ImageView teamsBtn;
 //    ImageView teamsBtn;
 //    ImageView teamsBtn;
+    int counter = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,13 +28,14 @@ public class MainActivity extends AppCompatActivity {
 
 //        teamsBtn = findViewById(R.id.teamsBtn);
         leaguesBtn = findViewById(R.id.leagues);
-
+        dataController = new DataController(this);
 //        teamsBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //                nextIntent(MainActivity.this, All_teams.class);
 //            }
 //        });
+
 //
 //        leaguesBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -39,6 +43,19 @@ public class MainActivity extends AppCompatActivity {
 //                nextIntent(MainActivity.this, All_teams.class);
 //            }
 //        });
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if(counter == 0){
+            Toast.makeText(this, "Press Back to Exit", Toast.LENGTH_SHORT).show();
+            counter ++;
+        }
+        else{
+            finish();
+        }
+
     }
 
     public void nextIntent(){

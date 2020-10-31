@@ -13,6 +13,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.footballcampleauge.Api;
+import com.example.footballcampleauge.DataController;
 import com.example.footballcampleauge.R;
 import com.example.footballcampleauge.adapter.LeaguesAdapter;
 import com.example.footballcampleauge.adapter.TeamsAdapter;
@@ -30,48 +31,19 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class allLeagues extends AppCompatActivity {
     ProgressBar loadingData;
     RecyclerView recyclerView;
+    DataController dataController;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.all_leagues);
-
-        loadingData = findViewById(R.id.progressBar);
+        dataController = new DataController(this);
         recyclerView = findViewById(R.id.leagues_recycler);
         LinearLayoutManager llm = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(llm);
-        loadingData.setVisibility(View.VISIBLE);
-        getLeagueIndia();
+        LinearSnapHelper snapHelper = new LinearSnapHelper();
+        snapHelper.attachToRecyclerView(recyclerView);
+        LeaguesAdapter adapter = new LeaguesAdapter(allLeagues.this,  dataController.retrieveLeagues());
+        recyclerView.setAdapter(adapter);
     }
 
-    public void getLeagueIndia(){
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Api.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        Api api = retrofit.create(Api.class);
-
-        Call<Leagues_model> call = api.getLeague();
-
-        call.enqueue(new Callback<Leagues_model>(){
-            @Override
-            public void onResponse(Call<Leagues_model> call, Response<Leagues_model> response) {
-                List<Leagues_model.Leagues> leagues = response.body().getLeagues();
-
-                LeaguesAdapter adapter = new LeaguesAdapter(allLeagues.this, leagues);
-                LinearSnapHelper snapHelper = new LinearSnapHelper();
-                snapHelper.attachToRecyclerView(recyclerView);
-
-                recyclerView.setAdapter(adapter);
-                loadingData.setVisibility(View.GONE);
-            }
-
-            @Override
-            public void onFailure(Call<Leagues_model> call, Throwable t) {
-                Toast.makeText(allLeagues.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }
 }

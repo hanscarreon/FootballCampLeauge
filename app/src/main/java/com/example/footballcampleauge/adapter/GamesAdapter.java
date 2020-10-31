@@ -41,7 +41,7 @@ public class GamesAdapter extends RecyclerView.Adapter<GamesAdapter.GamesViewHol
         holder.strVenue.setText(games.getStrVenue() == null ? "N/A" : games.getStrVenue());
         holder.intHomeScore.setText(games.getIntHomeScore() == null ? "N/A" : games.getIntHomeScore());
         holder.intAwayScore.setText(games.getIntAwayScore() == null ? "N/A" : games.getIntAwayScore());
-        holder.strTimestamp.setText(games.getStrTimestamp() == null ? "N/A" : games.getStrTimestamp());
+        holder.strTimestamp.setText(games.getStrTimestamp() == null ? "N/A" : games.getDateEventLocal());
 
 
     }
