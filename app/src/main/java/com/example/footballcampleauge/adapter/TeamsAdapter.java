@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.footballcampleauge.R;
 import com.example.footballcampleauge.model.TeamsModel;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -28,9 +29,19 @@ public class TeamsAdapter extends RecyclerView.Adapter<TeamsAdapter.TeamsViewHol
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TeamsViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final TeamsViewHolder holder, int position) {
         team = teamList.get(position);
-        Picasso.get().load(team.getStrTeamBadge()).into(holder.teamPic);
+        Picasso.get().load(team.getStrTeamBadge()).into(holder.teamPic, new Callback() {
+            @Override
+            public void onSuccess() {
+
+            }
+
+            @Override
+            public void onError(Exception e) {
+                 holder.teamPic.setImageResource(R.drawable.brokens);
+            }
+        });
         holder.teamName.setText(team.getStrTeam() == null ? "N/A" : team.getStrTeam());
         holder.teamAlt.setText(team.getStrAlternate() == null ? "N/A" : team.getStrAlternate() );
 //        holder.teamDesc.setText(team.getStrDescriptionEN() == null ? "N/A" : team.getStrDescriptionEN()  );

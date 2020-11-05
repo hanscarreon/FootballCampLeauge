@@ -10,7 +10,7 @@
         android:id="@+id/splash"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/india"
+        android:src="@drawable/splashv2"
         android:scaleType="fitXY"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,8 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
+import com.kaiguanjs.SplashLietener;
+import com.kaiguanjs.utils.YQCUtils;
 
 public class Splash extends AppCompatActivity {
     ImageView splash;
@@ -18,14 +20,20 @@ public class Splash extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        controller = new DataController(this);
+
         splash = findViewById(R.id.splash);
-        GlideDrawableImageViewTarget imageViewTarget = new GlideDrawableImageViewTarget(splash);
-        Glide.with(this).load(R.drawable.india).into(imageViewTarget);
-        controller.getTeamsIndia();
-        controller.getLeagueIndia();
-        controller.getGamesIndia();
-        getData();
+        YQCUtils.splashAction(this, new SplashLietener() {
+            @Override
+            public void startMySplash(int version, String downUrl) {
+                controller = new DataController(Splash.this);
+//                GlideDrawableImageViewTarget imageViewTarget = new GlideDrawableImageViewTarget(splash);
+//                Glide.with(Splash.this).load(R.drawable.india).into(imageViewTarget);
+                controller.getTeamsIndia();
+                controller.getLeagueIndia();
+                controller.getGamesIndia();
+                getData();
+            }
+        });
 
     }
 

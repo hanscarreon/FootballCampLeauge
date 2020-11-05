@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.footballcampleauge.R;
 import com.example.footballcampleauge.model.Leagues_model;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -30,9 +31,19 @@ public class LeaguesAdapter extends RecyclerView.Adapter<LeaguesAdapter.LeaguesV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull LeaguesAdapter.LeaguesViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final LeaguesAdapter.LeaguesViewHolder holder, int position) {
         leagues = leagueList.get(position);
-        Picasso.get().load(leagues.getStrBadge()).into(holder.strBadge);
+        Picasso.get().load(leagues.getStrBadge()).into(holder.strBadge, new Callback() {
+            @Override
+            public void onSuccess() {
+
+            }
+
+            @Override
+            public void onError(Exception e) {
+                holder.strBadge.setImageResource(R.drawable.brokens);
+            }
+        });
         holder.strLeague.setText(leagues.getStrLeague() == null ? "N/A" : leagues.getStrLeague());
         holder.strDescriptionEN.setText(leagues.getStrDescriptionEN() == null ? "N/A" : leagues.getStrDescriptionEN());
         holder.strCurrentSeason.setText(leagues.getStrCurrentSeason() == null ? "N/A" : leagues.getStrCurrentSeason());
